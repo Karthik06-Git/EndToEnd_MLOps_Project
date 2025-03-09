@@ -1,5 +1,6 @@
 pandas
 numpy
+ipykernel
 mlflow==2.2.2
 notebook
 scikit-learn
