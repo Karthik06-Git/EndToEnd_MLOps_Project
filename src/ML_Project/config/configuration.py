@@ -1,7 +1,8 @@
 from src.ML_Project.constants import *
 from src.ML_Project.utils.common import read_yaml, create_directories
 from src.ML_Project.entity.config_entity import (DataIngestionConfig,
-                                                 DataValidationConfig)
+                                                 DataValidationConfig,
+                                                 DataTransformationConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -15,6 +16,7 @@ class ConfigurationManager:
             self.schema = read_yaml(schema_filepath)
             create_directories([self.config.artifacts_root])
 
+
     def get_data_ingestion_config(self) -> DataIngestionConfig:
           config = self.config.data_ingestion
           create_directories([config.root_dir])         
@@ -26,6 +28,7 @@ class ConfigurationManager:
                 unzip_dir= config.unzip_dir 
           )
           return data_ingestion_config   
+    
     
     def get_data_validation_config(self) -> DataValidationConfig:
           config = self.config.data_validation
@@ -39,3 +42,14 @@ class ConfigurationManager:
                 all_schema = schema
           )
           return data_validation_config 
+    
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+          config = self.config.data_transformation
+          create_directories([config.root_dir])         
+
+          data_transformation_config = DataTransformationConfig(
+                root_dir= config.root_dir,
+                data_path= config.data_path
+          )
+          return data_transformation_config
