@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/karth/ML_practice/Projects/EndToEnd_MLOps_Project/mlruns/0/f17c4e598a1c4f38ad447c470b45dd8f/artifacts
+end_time: 1742640033529
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f17c4e598a1c4f38ad447c470b45dd8f
+run_name: upbeat-ram-22
+run_uuid: f17c4e598a1c4f38ad447c470b45dd8f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742640022060
+status: 3
+tags: []
+user_id: karth

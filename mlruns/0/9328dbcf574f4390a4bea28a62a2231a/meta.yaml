@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/karth/ML_practice/Projects/EndToEnd_MLOps_Project/mlruns/0/9328dbcf574f4390a4bea28a62a2231a/artifacts
+end_time: 1742639808632
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9328dbcf574f4390a4bea28a62a2231a
+run_name: clumsy-dove-133
+run_uuid: 9328dbcf574f4390a4bea28a62a2231a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742639798530
+status: 3
+tags: []
+user_id: karth
