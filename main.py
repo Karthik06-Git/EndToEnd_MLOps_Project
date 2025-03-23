@@ -11,10 +11,10 @@ from src.ML_Project.pipeline.stage_05_model_evaluation import ModelEvaluationTra
 
 STAGE_NAME = "Data Ingestion Stage"
 try:
-    logger.info(f">>>> stage {STAGE_NAME} started <<<<")
+    logger.info(f">>>> stage:: {STAGE_NAME} started <<<<")
     data_ingestion = DataIngestionTrainingPipeline()
     data_ingestion.main()
-    logger.info(f">>>> stage {STAGE_NAME} completed! <<<< \n\n x===========x")
+    logger.info(f">>>> stage:: {STAGE_NAME} completed! <<<< \n\n x===========x")
 except Exception as e:
     logger.exception(e)
     raise e
@@ -24,10 +24,10 @@ except Exception as e:
 
 STAGE_NAME = "Data Validation Stage"
 try:
-    logger.info(f">>>> stage {STAGE_NAME} started <<<<")
+    logger.info(f">>>> stage:: {STAGE_NAME} started <<<<")
     data_validation = DataValidationTrainingPipeline()
     data_validation.main()
-    logger.info(f">>>> stage {STAGE_NAME} completed! <<<< \n\n x===========x")
+    logger.info(f">>>> stage:: {STAGE_NAME} completed! <<<< \n\n x===========x")
 except Exception as e:
     logger.exception(e)
     raise e
