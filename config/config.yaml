@@ -18,7 +18,7 @@ data_validation:
 
 data_transformation:
   root_dir: artifacts/data_transformation
-  data_path: artifacts/data_ingestion/wine_quality_data.csv
+  data_path: artifacts/data_ingestion/Car_Selling_Prices_data.csv
 
 
 
