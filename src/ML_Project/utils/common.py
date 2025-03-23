@@ -75,7 +75,8 @@ def save_json(path: Path, data: dict):
 
 @ensure_annotations
 def load_json(path: Path) -> ConfigBox:
-    """load json files data
+    """
+    load json files data
 
     Args:
         path (Path): path to json file
@@ -93,7 +94,8 @@ def load_json(path: Path) -> ConfigBox:
 
 @ensure_annotations
 def save_bin(data: Any, path: Path):
-    """save binary file
+    """
+    save binary file
 
     Args:
         data (Any): data to be saved as binary
@@ -106,7 +108,8 @@ def save_bin(data: Any, path: Path):
 
 @ensure_annotations
 def load_bin(path: Path) -> Any:
-    """load binary data
+    """
+    load binary data
 
     Args:
         path (Path): path to binary file
@@ -122,7 +125,8 @@ def load_bin(path: Path) -> Any:
 
 @ensure_annotations
 def get_size(path: Path) -> str:
-    """get size in KB
+    """
+    get size in KB
 
     Args:
         path (Path): path of the file
