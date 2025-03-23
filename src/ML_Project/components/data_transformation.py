@@ -20,6 +20,13 @@ class DataTransformation:
         num_cols = data.select_dtypes(include=["int64","float64"]).columns.tolist()
         cat_cols = data.select_dtypes(include=["object"]).columns.tolist()
 
+        # removing "brand"-column due to its high cardinality of unique-categories
+        cat_cols.remove("brand")
+
+        # Frequency Encoding on "brand"
+        freq_encoding = data["brand"].value_counts() / len(data)
+        data["brand"] = data["brand"].map(freq_encoding)  
+
         # initialize One-Hot-Encoder
         encoder = OneHotEncoder(
             drop="first",
@@ -30,7 +37,7 @@ class DataTransformation:
         # Perform Encoding on Categorical-columns
         encoded_cat_cols = encoder.fit_transform(data[cat_cols])
         encoded_cat_cols_df = pd.DataFrame(encoded_cat_cols, columns=encoder.get_feature_names_out())
-        transformed_data = pd.concat([encoded_cat_cols_df, data[num_cols]], axis=1)
+        transformed_data = pd.concat([data[["brand"]], encoded_cat_cols_df, data[num_cols]], axis=1)
 
         logger.info("Categorical columns of data encoded successfully!")
 
@@ -47,6 +54,7 @@ class DataTransformation:
         logger.info("Saving OHE-encoder to pickle file at artifacts...")
 
         return transformed_data  
+
 
 
     def train_test_splitting(self):

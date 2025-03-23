@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import warnings
 from src.ML_Project import logger
 from sklearn.linear_model import ElasticNet
 import joblib
@@ -32,5 +33,7 @@ class ModelTrainer:
         # train the model
         lr_model.fit(X_train, y_train)
 
+        warnings.filterwarnings("ignore")
+        
         # save the model
         joblib.dump(lr_model, os.path.join(self.config.root_dir, self.config.model_name))
