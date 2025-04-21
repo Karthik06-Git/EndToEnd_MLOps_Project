@@ -30,7 +30,7 @@ https://github.com/Karthik06-Git/EndToEnd_MLOps_Project
 ### STEP 01- Create a conda environment after opening the repository
 
 ```bash
-conda create -n venv python=3.10 -y
+conda create -n venv python=3.11 -y
 ```
 
 ```bash
