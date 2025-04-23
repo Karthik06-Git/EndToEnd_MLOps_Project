@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
-import os
+import math 
+import locale
 from src.ML_Project.pipeline.prediction import PredictionPipeline
 
 from flask import Flask, render_template, request
@@ -15,11 +16,6 @@ def homePage():
     return render_template("index.html")
 
 
-# route to train the pipeline
-@app.route("/train", methods=["GET"])
-def training():
-    os.system("python main.py")
-    return "Training Successful!"
 
 
 # route to show the predictions in the web
@@ -27,27 +23,36 @@ def training():
 def predict():
     if request.method == 'POST':
         try:
-            #  reading the inputs given by the user
-            fixed_acidity =float(request.form['fixed_acidity'])
-            volatile_acidity =float(request.form['volatile_acidity'])
-            citric_acid =float(request.form['citric_acid'])
-            residual_sugar =float(request.form['residual_sugar'])
-            chlorides =float(request.form['chlorides'])
-            free_sulfur_dioxide =float(request.form['free_sulfur_dioxide'])
-            total_sulfur_dioxide =float(request.form['total_sulfur_dioxide'])
-            density =float(request.form['density'])
-            pH =float(request.form['pH'])
-            sulphates =float(request.form['sulphates'])
-            alcohol =float(request.form['alcohol'])
-       
-         
-            data = [fixed_acidity, volatile_acidity, citric_acid, residual_sugar, chlorides, free_sulfur_dioxide, total_sulfur_dioxide, density, pH, sulphates, alcohol]
-            data = np.array(data).reshape(1, 11)
+            # Get the Form data from HTML-page
+            brand = str(request.form['brand'])
+            year = int(request.form['year'])
+            km_driven = int(request.form['km_driven'])
+            fuel = str(request.form['fuel'])
+            seller_type = str(request.form['seller_type'])
+            transmission = str(request.form['transmission'])
+            owner = str(request.form['owner'])
+
+            # Create input DataFrame or reshape as needed
+            input_data = pd.DataFrame({
+                "brand": [brand], 
+                "year": [year],
+                "km_driven": [km_driven],
+                "fuel": [fuel],
+                "seller_type": [seller_type],
+                "transmission": [transmission],
+                "owner": [owner]
+            })
+
             
             pipeline = PredictionPipeline()
-            output = pipeline.predict(data)
+            output = pipeline.predict(input_data)
+            output = int(math.ceil(output / 1000.0)) * 1000
 
-            return render_template('results.html', prediction = str(output))
+            # Formatting in Indian number system
+            locale.setlocale(locale.LC_ALL, 'en_IN.UTF-8')
+            formatted_price = locale.format_string("₹ %d", output, grouping=True)
+
+            return render_template('results.html', prediction=formatted_price)
 
         except Exception as e:
             print('The Exception message is: ',e)

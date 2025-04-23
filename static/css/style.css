@@ -1,25 +1,23 @@
 body {
-	margin:  0;
+	margin: 0;
 }
+
 .page-content {
 	width: 100%;
-	margin:  0 auto;
-	background-image: url('https://thumbs.dreamstime.com/b/celebration-transparent-wine-glass-celebration-transparent-wine-glass-illustration-friends-clinking-sparkling-party-cheers-elegant-343548545.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+	margin: 0 auto;
+	background-image: url('https://images.app.ridemotive.com/y1i4tmsx12errib85uqmwl57itab');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.form-v9-content  {
-    background-color: rgba(0, 0, 0, 0.7);
+
+.form-content {
+	background-color: rgba(0, 0, 0, 0.7);
 	width: 1000px;
 	border-radius: 15px;
-	-o-border-radius: 15px;
-	-ms-border-radius: 15px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
 	margin: 185px 0;
 	font-family: sans-serif;
 	color: whitesmoke;
@@ -27,71 +25,85 @@ body {
 	font-size: 15px;
 	position: relative;
 }
-.form-v9-content .form-detail {
-    padding: 30px 100px 30px 80px;
+
+.form-content .form-detail {
+	padding: 30px 100px 30px 80px;
 	position: relative;
 }
-.form-v9-content .form-detail h1 {
-    color: rgb(198, 61, 61);
+
+.form-content .form-detail h1 {
+	color: rgb(198, 61, 61);
 	font-size: 35px;
 	text-align: center;
-	position: relative;
 	padding: 16px 0 13px;
 	margin-bottom: 55px;
 }
 
-.form-v9-content .form-row-total {
-    display: flex;
-    display: -webkit-flex;
-    justify-content: space-between;
-    -o-justify-content: space-between;
-    -ms-justify-content: space-between;
-    -moz-justify-content: space-between;
-    -webkit-justify-content: space-between;
-}
-.form-v9-content .form-row {
-    width: 45%;
-}
-.form-v9-content .form-detail .form-row-last {
-	text-align: center;
-}
-.form-v9-content .form-detail .input-text {
-	margin-bottom: 45px;
-}
-.form-v9-content .form-detail input {
-	width: 100%;
-    margin-top: 5px;
-    padding: 14.5px 0px 14.5px 30px;
-    border: 2px solid #af6161;
-    border-radius: 7px;
-	font-family: sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    color: blanchedalmond;
-    background: rgba(255, 255, 255, 0.4)
-}
-input::-webkit-input-placeholder { 
-  color: whitesmoke;
-  font-size: 14px;
+.form-content .form-row-total {
+	display: flex;
+	justify-content: space-between;
 }
 
-.form-v9-content .form-detail button {
+.form-content .form-row {
+	width: 45%;
+}
+
+.form-content .form-detail .form-row-last {
+	text-align: center;
+}
+
+.form-content .form-detail .input-text {
+	margin-bottom: 45px;
+}
+
+.form-content .form-detail input,
+.form-content .form-detail select {
+	width: 100%;
+	margin-top: 5px;
+	padding: 14.5px 30px; 
+	box-sizing: border-box; 
+	border: 2px solid #af6161;
+	border-radius: 7px;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
+	background: rgba(255, 255, 255, 0.6);
+}
+
+
+input::-webkit-input-placeholder,
+select:invalid {
+	color: black;
+	font-size: 14px;
+}
+
+
+select {
+	background-image: url("https://images.app.ridemotive.com/y1i4tmsx12errib85uqmwl57itab");
+	cursor: pointer;
+	width: 100%;
+}
+
+.form-content .form-detail button {
 	background: #f25d5d;
-	border-radius: 25px;
+	border-radius: 12px;
 	width: 180px;
-    padding: 15px;
+	padding: 15px;
 	border: none;
 	margin: 20px 0 73px 35px;
-    text-align: center;
+	text-align: center;
 	cursor: pointer;
 	font-family: sans-serif;
 	color: #fff;
 	font-weight: bold;
 	font-size: 18px;
 }
-.form-v9-content .form-detail button:hover {
+
+.form-content .form-detail button:hover {
 	background: #cf4141;
 }
+
 
 
 
@@ -107,7 +119,7 @@ input::-webkit-input-placeholder {
 .results .page-content {
 	width: 100%;
 	margin:  0 auto;
-	background-image: url('https://thumbs.dreamstime.com/b/celebration-transparent-wine-glass-celebration-transparent-wine-glass-illustration-friends-clinking-sparkling-party-cheers-elegant-343548545.jpg'); 
+	background-image: url('https://images.app.ridemotive.com/y1i4tmsx12errib85uqmwl57itab'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -150,7 +162,7 @@ input::-webkit-input-placeholder {
 }
 .results button {
 	background: #f25d5d;
-	border-radius: 25px;
+	border-radius: 12px;
     border: none;
 	width: 120px;
     padding: 10px;
@@ -174,24 +186,24 @@ input::-webkit-input-placeholder {
 
 /* Responsive */
 @media screen and (max-width: 1199px) {
-	.form-v9-content {
+	.form-content {
 	    margin: 185px 20px;
 	}
 }
 @media screen and (max-width: 767px) {
-	.form-v9-content .form-row-total {
+	.form-content .form-row-total {
 		flex-direction: column;
 		-o-flex-direction: column;
 		-ms-flex-direction: column;
 		-moz-flex-direction: column;
 		-webkit-flex-direction: column;
 	}
-	.form-v9-content .form-row {
+	.form-content .form-row {
 		width: 100%;
 	}
 }
 @media screen and (max-width: 575px) {
-	.form-v9-content .form-detail {
+	.form-content .form-detail {
 	    padding: 30px 45px 30px 10px;
 	}
 }

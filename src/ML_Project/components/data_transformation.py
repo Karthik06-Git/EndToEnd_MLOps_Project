@@ -22,7 +22,7 @@ class DataTransformation:
         target = data[["selling_price"]]
         data.drop(["selling_price"], axis=1, inplace=True)
 
-        # transform the "year" into "Car's-age" (age = current_year-year_of_car)
+        # transform the "year" into "Car's-age" (age = current_year-year_of_purchase)
         current_year = 2025
         data["year"] = current_year - data["year"]
         data.rename(columns={"year":"age"}, inplace=True)
@@ -61,11 +61,6 @@ class DataTransformation:
             pickle.dump(target_scaler, scaler_file_path)
 
         logger.info("Saving both Std-scalers as pickle files at artifacts...")
- 
-        # save the OHE-encoder as pickle file
-        with open("artifacts/data_transformation/OHE_encoder.pkl", "wb") as encoder_file_path:
-            pickle.dump(encoder, encoder_file_path)
-        logger.info("Saving OHE-encoder to pickle file at artifacts...")
 
         return transformed_data  
 
