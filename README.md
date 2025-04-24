@@ -169,7 +169,7 @@ set MLFLOW_TRACKING_PASSWORD=a3cb112c9d5517810f14bf35658ea4d8abb54d97
 
     AWS_REGION = eu-north-1
 
-    AWS_ECR_LOGIN_URI = demo>>  891377245898.dkr.ecr.eu-north-1.amazonaws.com
+    AWS_ECR_LOGIN_URI = demo>> 891377245898.dkr.ecr.eu-north-1.amazonaws.com
 
     ECR_REPOSITORY_NAME = mlops-project
 
