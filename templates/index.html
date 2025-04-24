@@ -1,118 +1,118 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Car Price Predictor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="static/css/style.css"/>
-</head>
-<body class="form">
-    <div class="page-content">
-        <div class="form-content">
-            <form class="form-detail" action="/predict" method="post">
-
-                <h1>Car Price Prediction</h1>
-
-                <div class="form-row-total">
-                    <div class="form-row">
-                        <label for="brand">Brand:</label>
-                        <select name="brand" id="brand" class="input-text" required>
-                            <option value="" disabled selected>Select brand of the car</option>
-                            <option value="Maruti">Maruti</option>
-                            <option value="Hyundai">Hyundai</option>
-                            <option value="Datsun">Datsun</option>
-                            <option value="Honda">Honda</option>
-                            <option value="Tata">Tata</option>
-                            <option value="Chevrolet">Chevrolet</option>
-                            <option value="Toyota">Toyota</option>
-                            <option value="Jaguar">Jaguar</option>
-                            <option value="Mercedes-Benz">Mercedes-Benz</option>
-                            <option value="Audi">Audi</option>
-                            <option value="Skoda">Skoda</option>
-                            <option value="Jeep">Jeep</option>
-                            <option value="BMW">BMW</option>
-                            <option value="Mahindra">Mahindra</option>
-                            <option value="Ford">Ford</option>
-                            <option value="Nissan">Nissan</option>
-                            <option value="Renault">Renault</option>
-                            <option value="Fiat">Fiat</option>
-                            <option value="Volkswagen">Volkswagen</option>
-                            <option value="Volvo">Volvo</option>
-                            <option value="Mitsubishi">Mitsubishi</option>
-                            <option value="Land">Land</option>
-                            <option value="Daewoo">Daewoo</option>
-                            <option value="MG">MG</option>
-                            <option value="Force">Force</option>
-                            <option value="Isuzu">Isuzu</option>
-                            <option value="OpelCorsa">OpelCorsa</option>
-                            <option value="Ambassador">Ambassador</option>
-                            <option value="Kia">Kia</option>
-                        </select>                        
+    <head>
+        <meta charset="utf-8">
+        <title>Car Price Predictor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="static/css/style.css"/>
+    </head>
+    <body class="form">
+        <div class="page-content">
+            <div class="form-content">
+                <form class="form-detail" action="/predict" method="post">
+                
+                    <h1>Car Price Prediction</h1>
+                
+                    <div class="form-row-total">
+                        <div class="form-row">
+                            <label for="brand">Brand:</label>
+                            <select name="brand" id="brand" class="input-text" required>
+                                <option value="" disabled selected>Select brand of the car</option>
+                                <option value="Maruti">Maruti</option>
+                                <option value="Hyundai">Hyundai</option>
+                                <option value="Datsun">Datsun</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Tata">Tata</option>
+                                <option value="Chevrolet">Chevrolet</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Jaguar">Jaguar</option>
+                                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                <option value="Audi">Audi</option>
+                                <option value="Skoda">Skoda</option>
+                                <option value="Jeep">Jeep</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Mahindra">Mahindra</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Nissan">Nissan</option>
+                                <option value="Renault">Renault</option>
+                                <option value="Fiat">Fiat</option>
+                                <option value="Volkswagen">Volkswagen</option>
+                                <option value="Volvo">Volvo</option>
+                                <option value="Mitsubishi">Mitsubishi</option>
+                                <option value="Land">Land</option>
+                                <option value="Daewoo">Daewoo</option>
+                                <option value="MG">MG</option>
+                                <option value="Force">Force</option>
+                                <option value="Isuzu">Isuzu</option>
+                                <option value="OpelCorsa">OpelCorsa</option>
+                                <option value="Ambassador">Ambassador</option>
+                                <option value="Kia">Kia</option>
+                            </select>                        
+                        </div>
+                        <div class="form-row">
+                            <label for="year">Year:</label>
+                            <input type="text" name="year" id="year" class="input-text" placeholder="year" required>
+                        </div>
                     </div>
-                    <div class="form-row">
-                        <label for="year">Year:</label>
-                        <input type="text" name="year" id="year" class="input-text" placeholder="year" required>
+                
+                    <div class="form-row-total">
+                        <div class="form-row">
+                            <label for="km_driven">KM Driven:</label>
+                            <input type="text" name="km_driven" id="km_driven" class="input-text" placeholder="Kilometers driven" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="fuel">Fuel Type:</label>
+                            <select name="fuel" id="fuel" class="input-text" required>
+                                <option value="" disabled selected>Select fuel type</option>
+                                <option value="Petrol">Petrol</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="CNG">CNG</option>
+                                <option value="LPG">LPG</option>
+                                <option value="Electric">Electric</option>
+                            </select>                        
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-row-total">
-                    <div class="form-row">
-                        <label for="km_driven">KM Driven:</label>
-                        <input type="text" name="km_driven" id="km_driven" class="input-text" placeholder="Kilometers driven" required>
+                
+                    <div class="form-row-total">
+                        <div class="form-row">
+                            <label for="seller_type">Seller Type:</label>
+                            <select name="seller_type" id="seller_type" class="input-text" required>
+                                <option value="" disabled selected>Select seller type</option>
+                                <option value="Individual">Individual</option>
+                                <option value="Dealer">Dealer</option>
+                                <option value="Trustmark Dealer">Trustmark Dealer</option>
+                            </select>                        
+                        </div>
+                        <div class="form-row">
+                            <label for="transmission">Transmission:</label>
+                            <select name="transmission" id="transmission" class="input-text" required>
+                                <option value="" disabled selected>Select transmission</option>
+                                <option value="Manual">Manual</option>
+                                <option value="Automatic">Automatic</option>
+                            </select>                        
+                        </div>
                     </div>
-                    <div class="form-row">
-                        <label for="fuel">Fuel Type:</label>
-                        <select name="fuel" id="fuel" class="input-text" required>
-                            <option value="" disabled selected>Select fuel type</option>
-                            <option value="Petrol">Petrol</option>
-                            <option value="Diesel">Diesel</option>
-                            <option value="CNG">CNG</option>
-                            <option value="LPG">LPG</option>
-                            <option value="Electric">Electric</option>
-                        </select>                        
+                
+                    <div class="form-row-total">
+                        <div class="form-row">
+                            <label for="owner">Owner:</label>
+                            <select name="owner" id="owner" class="input-text" required>
+                                <option value="" disabled selected>Select owner status</option>
+                                <option value="First Owner">First Owner</option>
+                                <option value="Second Owner">Second Owner</option>
+                                <option value="Third Owner">Third Owner</option>
+                                <option value="Fourth & Above Owner">Fourth & Above Owner</option>
+                                <option value="Test Drive Car">Test Drive Car</option>
+                            </select>                        
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-row-total">
-                    <div class="form-row">
-                        <label for="seller_type">Seller Type:</label>
-                        <select name="seller_type" id="seller_type" class="input-text" required>
-                            <option value="" disabled selected>Select seller type</option>
-                            <option value="Individual">Individual</option>
-                            <option value="Dealer">Dealer</option>
-                            <option value="Trustmark Dealer">Trustmark Dealer</option>
-                        </select>                        
+                
+                    <div class="form-row-last">
+                        <button type="submit" value="predict">Predict</button>
                     </div>
-                    <div class="form-row">
-                        <label for="transmission">Transmission:</label>
-                        <select name="transmission" id="transmission" class="input-text" required>
-                            <option value="" disabled selected>Select transmission</option>
-                            <option value="Manual">Manual</option>
-                            <option value="Automatic">Automatic</option>
-                        </select>                        
-                    </div>
-                </div>
-
-                <div class="form-row-total">
-                    <div class="form-row">
-                        <label for="owner">Owner:</label>
-                        <select name="owner" id="owner" class="input-text" required>
-                            <option value="" disabled selected>Select owner status</option>
-                            <option value="First Owner">First Owner</option>
-                            <option value="Second Owner">Second Owner</option>
-                            <option value="Third Owner">Third Owner</option>
-                            <option value="Fourth & Above Owner">Fourth & Above Owner</option>
-                            <option value="Test Drive Car">Test Drive Car</option>
-                        </select>                        
-                    </div>
-                </div>
-
-                <div class="form-row-last">
-                    <button type="submit" value="predict">Predict</button>
-                </div>
-
-            </form>
+                
+                </form>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
