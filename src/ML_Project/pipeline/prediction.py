@@ -49,7 +49,7 @@ class PredictionPipeline:
         
         logger.info("Input data transformed acc to model requirement")
         return transformed_data
-        
+    
 
 
     def predict(self, input_data):

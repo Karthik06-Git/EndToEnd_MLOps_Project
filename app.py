@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import math 
-import locale
 from src.ML_Project.pipeline.prediction import PredictionPipeline
 
 from flask import Flask, render_template, request
@@ -14,6 +13,20 @@ app = Flask(__name__)
 @app.route("/", methods=["GET"])
 def homePage():
     return render_template("index.html")
+
+
+
+
+def format_price_in_indian_style(number):
+    s, *d = str(int(number))[::-1], ''
+    groups = []
+    groups.append(s[:3])
+    s = s[3:]
+    while s:
+        groups.append(s[:2])
+        s = s[2:]
+    formatted = ','.join(groups)[::-1]
+    return formatted
 
 
 
@@ -48,9 +61,9 @@ def predict():
             output = pipeline.predict(input_data)
             output = int(math.ceil(output / 1000.0)) * 1000
 
-            # Formatting in Indian number system
-            locale.setlocale(locale.LC_ALL, 'en_IN.UTF-8')
-            formatted_price = locale.format_string("%d", output, grouping=True) 
+            # format the predicted-price in Indian-style number
+            formatted_price = format_price_in_indian_style(output)
+            
 
             return render_template('results.html', prediction=formatted_price)
 
