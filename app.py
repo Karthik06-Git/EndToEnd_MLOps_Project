@@ -18,9 +18,8 @@ def homePage():
 
 
 def format_price_in_indian_style(number):
-    s, *d = str(int(number))[::-1], ''
-    groups = []
-    groups.append(s[:3])
+    s = str(int(number))[::-1]
+    groups = [s[:3]]
     s = s[3:]
     while s:
         groups.append(s[:2])
@@ -59,11 +58,11 @@ def predict():
             
             pipeline = PredictionPipeline()
             output = pipeline.predict(input_data)
-            output = int(math.ceil(output / 1000.0)) * 1000
+            output = ((int(output) + 999) // 1000) * 1000
 
             # format the predicted-price in Indian-style number
             formatted_price = format_price_in_indian_style(output)
-            
+
 
             return render_template('results.html', prediction=formatted_price)
 
