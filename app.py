@@ -52,7 +52,7 @@ def predict():
             locale.setlocale(locale.LC_ALL, 'en_IN.UTF-8')
             formatted_price = locale.format_string("%d", output, grouping=True) 
 
-            return render_template('results.html', prediction=output)
+            return render_template('results.html', prediction=formatted_price)
 
         except Exception as e:
             print('The Exception message is: ',e)
