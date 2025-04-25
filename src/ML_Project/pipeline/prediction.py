@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import pickle as pk
+import math
 from sklearn.preprocessing import OneHotEncoder
 from pathlib import Path
 from src.ML_Project import logger
@@ -50,6 +51,16 @@ class PredictionPipeline:
         logger.info("Input data transformed acc to model requirement")
         return transformed_data
     
+    def format_price_in_indian_style(self, number):
+        s = str(int(number))[::-1]
+        groups = [s[:3]]
+        s = s[3:]
+        while s:
+            groups.append(s[:2])
+            s = s[2:]
+        formatted = ','.join(groups)[::-1]
+        return formatted
+    
 
 
     def predict(self, input_data):
@@ -58,7 +69,11 @@ class PredictionPipeline:
         prediction = np.reshape(prediction, (-1,1))
         # rescale the output price to normal range
         prediction = self.target_scaler.inverse_transform(prediction)[0][0]
+        prediction = int(math.ceil(prediction / 1000.0)) * 1000
 
-        return prediction
+        # format the predicted-price in Indian-style number
+        formatted_price = self.format_price_in_indian_style(prediction)
+
+        return formatted_price
     
 

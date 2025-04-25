@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import math 
 from src.ML_Project.pipeline.prediction import PredictionPipeline
 
 from flask import Flask, render_template, request
@@ -13,19 +12,6 @@ app = Flask(__name__)
 @app.route("/", methods=["GET"])
 def homePage():
     return render_template("index.html")
-
-
-
-
-def format_price_in_indian_style(number):
-    s = str(int(number))[::-1]
-    groups = [s[:3]]
-    s = s[3:]
-    while s:
-        groups.append(s[:2])
-        s = s[2:]
-    formatted = ','.join(groups)[::-1]
-    return formatted
 
 
 
@@ -54,17 +40,11 @@ def predict():
                 "transmission": [transmission],
                 "owner": [owner]
             })
-
             
             pipeline = PredictionPipeline()
             output = pipeline.predict(input_data)
-            output = ((int(output) + 999) // 1000) * 1000
 
-            # format the predicted-price in Indian-style number
-            formatted_price = format_price_in_indian_style(output)
-
-
-            return render_template('results.html', prediction=formatted_price)
+            return render_template('results.html', prediction=output)
 
         except Exception as e:
             print('The Exception message is: ',e)
@@ -72,6 +52,7 @@ def predict():
 
     else:
         return render_template('index.html')
+    
 
 
 
