@@ -145,7 +145,7 @@ set MLFLOW_TRACKING_PASSWORD=a3cb112c9d5517810f14bf35658ea4d8abb54d97
 
 	sudo apt-get update -y
 
-	sudo apt-get upgrade
+	sudo apt-get upgrade -y
 	
 	#required
 
