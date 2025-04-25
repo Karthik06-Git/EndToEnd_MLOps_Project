@@ -46,13 +46,13 @@ def predict():
             
             pipeline = PredictionPipeline()
             output = pipeline.predict(input_data)
-            output = int(math.ceil(output / 1000.0)) * 1000
+            # output = int(math.ceil(output / 1000.0)) * 1000
 
-            # Formatting in Indian number system
-            locale.setlocale(locale.LC_ALL, 'English_India')
-            formatted_price = locale.format_string("%d", output, grouping=True) 
+            # # Formatting in Indian number system
+            # locale.setlocale(locale.LC_ALL, 'English_India')
+            # formatted_price = locale.format_string("%d", output, grouping=True) 
 
-            return render_template('results.html', prediction=formatted_price)
+            return render_template('results.html', prediction=output)
 
         except Exception as e:
             print('The Exception message is: ',e)
