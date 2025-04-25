@@ -1,7 +1,7 @@
 FROM python:3.11-slim-buster
 
-RUN apt update -y && \
-    apt install  locales awscli -y && \
+RUN apt update && \
+    apt install -y locales awscli && \
     echo "en_IN.UTF-8 UTF-8" >> /etc/locale.gen && \
     locale-gen en_IN.UTF-8 && \
     update-locale LANG=en_IN.UTF-8
