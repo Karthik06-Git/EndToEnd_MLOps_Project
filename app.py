@@ -50,7 +50,7 @@ def predict():
 
             # Formatting in Indian number system
             locale.setlocale(locale.LC_ALL, 'English_India')
-            formatted_price = locale.format_string("%d", output, grouping=True)
+            formatted_price = locale.format_string("%d", output, grouping=True) 
 
             return render_template('results.html', prediction=formatted_price)
 
