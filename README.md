@@ -168,9 +168,9 @@ set MLFLOW_TRACKING_PASSWORD=a3cb112c9d5517810f14bf35658ea4d8abb54d97
 
 ## 7. Setup github secrets:
 
-    AWS_ACCESS_KEY_ID=
+    AWS_ACCESS_KEY_ID = ****
 
-    AWS_SECRET_ACCESS_KEY=
+    AWS_SECRET_ACCESS_KEY = ****
 
     AWS_REGION = us-east-1
 
