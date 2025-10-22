@@ -1,5 +1,9 @@
 # EndToEnd_MLOps_Project
 
+Deployed a Car Price Prediction Web App using Flask and AWS-EC2, integrated with a CI/CD pipeline via GitHub Actions.
+The model predicts prices of old cars based on user inputs like brand, fuel_type, kilometer_driven and ownership details.
+Built with a custom MLOPs pipeline, Docker containerization, and secure AWS deployment for scalability.
+
 
 ## Workflows
 
@@ -191,3 +195,15 @@ MLflow
  - Logging & tagging your model
 
 
+
+
+## Web Screenshots
+
+1) Web-App before filling details
+![image1](https://github.com/Karthik06-Git/EndToEnd_MLOps_Project/blob/main/web_screenshots/image-01.png)
+
+2) Web-App after filling details 
+![image1](https://github.com/Karthik06-Git/EndToEnd_MLOps_Project/blob/main/web_screenshots/image-02.png)
+
+3) Result page 
+![image1](https://github.com/Karthik06-Git/EndToEnd_MLOps_Project/blob/main/web_screenshots/image-03.png)
